@@ -6,8 +6,8 @@ export type TerminalRenderOptions = {
 
 export function renderTerminal(matrix: boolean[][], opts: TerminalRenderOptions = {}): string {
   const margin = opts.margin ?? 2;
-  const dark = opts.dark ?? "██";
-  const light = opts.light ?? " ";
+  const dark = opts.dark ?? "\x1b[40m  \x1b[0m";
+  const light = opts.light ?? "\x1b[47m  \x1b[0m";
   const size = matrix.length;
   const total = size + margin * 2;
   const lines: string[] = [];
